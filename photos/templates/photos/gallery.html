@@ -58,119 +58,30 @@
 
         <div class="col-md-9">
           <div class="row">
+            {% for photo in photos %}
             <div class="col-md-4">
               <div class="card mb-4">
                 <img
-                  src="https://source.unsplash.com/I3C1sSXj1i8/1600x900"
+                  src="{{ photo.image.url }}"
                   class="image-thumbnail"
-                  alt="Leopard"
+                  alt="{{ photo.name }}"
                 />
                 <div class="card-body">
-                  <small class="card-text">Category: Animals</small>
+                  <small class="card-text"
+                    >Category: {{ photo.category.name }}</small
+                  >
                 </div>
 
                 <a
-                  href="{% url 'photo' 1 %}"
+                  href="{% url 'photo' photo.id %}"
                   class="btn btn-outline-dark btn-sm m-1"
                   >View</a
                 >
               </div>
             </div>
-
-            <div class="col-md-4">
-              <div class="card mb-4">
-                <img
-                  src="https://source.unsplash.com/xls6uaTIhaI/1600x900"
-                  class="image-thumbnail"
-                  alt="Deer"
-                />
-                <div class="card-body">
-                  <small class="card-text">Category: Animals</small>
-                </div>
-
-                <a
-                  href="{% url 'photo' 2 %}"
-                  class="btn btn-outline-dark btn-sm m-1"
-                  >View</a
-                >
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card mb-4">
-                <img
-                  src="https://source.unsplash.com/mvTGLyiRqx8/1600x900"
-                  class="image-thumbnail"
-                  alt="Cat"
-                />
-                <div class="card-body">
-                  <small class="card-text">Category: Animals</small>
-                </div>
-
-                <a
-                  href="{% url 'photo' 3 %}"
-                  class="btn btn-outline-dark btn-sm m-1"
-                  >View</a
-                >
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card mb-4">
-                <img
-                  src="https://source.unsplash.com/xR3hdMS3Imw/1600x900"
-                  class="image-thumbnail"
-                  alt="Horse"
-                />
-                <div class="card-body">
-                  <small class="card-text">Category: Animals</small>
-                </div>
-
-                <a
-                  href="{% url 'photo' 4 %}"
-                  class="btn btn-outline-dark btn-sm m-1"
-                  >View</a
-                >
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card mb-4">
-                <img
-                  src="https://source.unsplash.com/PUY5xUszd3Y/1600x900"
-                  class="image-thumbnail"
-                  alt="Dog"
-                />
-                <div class="card-body">
-                  <small class="card-text">Category: Animals</small>
-                </div>
-
-                <a
-                  href="{% url 'photo' 5 %}"
-                  class="btn btn-outline-dark btn-sm m-1"
-                  >View</a
-                >
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="card mb-4">
-                <img
-                  src="https://source.unsplash.com/rMMtyyponRM/1600x900"
-                  class="image-thumbnail"
-                  alt="Tiger"
-                />
-                <div class="card-body">
-                  <small class="card-text">Category: Animals</small>
-                </div>
-
-                <a
-                  href="{% url 'photo' 6 %}"
-                  class="btn btn-outline-dark btn-sm m-1"
-                  >View</a
-                >
-              </div>
-            </div>
+            {% empty %}
+            <h2>No photos...</h2>
+            {% endfor %}
           </div>
         </div>
       </div>
