@@ -40,9 +40,13 @@
             <div class="card-header">Categories</div>
             <ul class="list-group list-group-flush">
               <li class="list-group-item">All</li>
-              <li class="list-group-item">Cras justo odio</li>
-              <li class="list-group-item">Dapibus ac facilisis in</li>
-              <li class="list-group-item">Vestibulum at eros</li>
+
+              {% for category in categories %}
+              <li class="list-group-item text-capitalize">
+                {{ category.name }}
+              </li>
+              {% endfor %}
+
               <a
                 href="{% url 'add' %}"
                 class="btn btn-dark btn-block btn-sm m-1"
