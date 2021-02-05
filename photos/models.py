@@ -28,6 +28,8 @@ class Photo(models.Model):
         null=False,
         default=uuid4,
         primary_key=True)
+    name = models.CharField(max_length=100, null=False,
+                            blank=False)
     image = models.ImageField(null=False, blank=False)
     description = models.TextField(null=False, blank=False)
     category = models.ForeignKey(
