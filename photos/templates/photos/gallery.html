@@ -71,7 +71,6 @@
                     >Category: {{ photo.category.name }}</small
                   >
                 </div>
-
                 <a
                   href="{% url 'photo' photo.id %}"
                   class="btn btn-outline-dark btn-sm m-1"
@@ -80,7 +79,7 @@
               </div>
             </div>
             {% empty %}
-            <h2>No photos...</h2>
+            <h3>No photos...</h3>
             {% endfor %}
           </div>
         </div>
