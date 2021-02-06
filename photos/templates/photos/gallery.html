@@ -39,11 +39,15 @@
           <div class="card">
             <div class="card-header">Categories</div>
             <ul class="list-group list-group-flush">
-              <li class="list-group-item">All</li>
+              <li class="list-group-item">
+                <a href="{% url 'gallery' %}">All</a>
+              </li>
 
               {% for category in categories %}
               <li class="list-group-item text-capitalize">
-                {{ category.name }}
+                <a href="{% url 'gallery' %}?category={{category.name}}"
+                  >{{ category.name }}</a
+                >
               </li>
               {% endfor %}
 

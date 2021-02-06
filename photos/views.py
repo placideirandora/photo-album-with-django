@@ -5,8 +5,13 @@ from .models import Category, Photo
 
 
 def view_gallery(request):
+    category = request.GET.get('category')
     categories = Category.objects.all()
-    photos = Photo.objects.all()
+
+    if category is None:
+        photos = Photo.objects.all()
+    else:
+        photos = Photo.objects.filter(category__name=category)
 
     context = {'categories': categories, 'photos': photos}
 
