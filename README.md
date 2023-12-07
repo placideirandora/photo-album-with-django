@@ -11,7 +11,7 @@ A full-stack web application for storing photos to AWS S3 Bucket.
 
 ### Clone The Project
 
-`git clone https://github.com/placiderapson/photo-album-with-django`
+`git clone https://github.com/placideirandora/photo-album-with-django`
 
 ### Create and Activate Virtual Environment
 
@@ -23,7 +23,7 @@ A full-stack web application for storing photos to AWS S3 Bucket.
 
 ### Apply Migrations
 
-`python3 manage.py makemigrations && python3 manage.py migrate`
+`python3 manage.py migrate`
 
 ### Create Super User
 
